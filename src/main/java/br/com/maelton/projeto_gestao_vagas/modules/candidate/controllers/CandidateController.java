@@ -6,13 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.maelton.projeto_gestao_vagas.modules.candidate.CandidateEntity;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/candidate")
 public class CandidateController {
     
     @PostMapping("/create")
-    public void create(@RequestBody CandidateEntity candidate) {
+    //@Valid is used to validate incoming data
+    public void create(@Valid @RequestBody CandidateEntity candidate) {
         System.out.println("Candidate: ("+ 
                            candidate.getName() + 
                            ", " + candidate.getEmail() +
