@@ -17,13 +17,15 @@ public class CandidateEntity {
     private String UUID;
     private String name;
 
-    //regexp => expressao regular
+    //requisite validation for regexp => expressao regular
     @Pattern(regexp = "^(?!\\s*$).+", message = "Digite um username válido.")
     private String username;
     
-    @Email(message = "Digite um email válido.")
+    //Email arg validation requisite
+    @Email(message = "Digite um email válido.") 
     private String email;
     
+    //Password arg validation requisite
     @Length(min = 8, max = 20, message = "Mínimo de 8 e máximo de 20 caracteres.")
     private String password;
     

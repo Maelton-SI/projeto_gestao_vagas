@@ -13,7 +13,7 @@ import jakarta.validation.Valid;
 public class CandidateController {
     
     @PostMapping("/create")
-    //@Valid is used to validate incoming data
+    //@Valid is used to validate incoming data, according to the args validation requisites
     public void create(@Valid @RequestBody CandidateEntity candidate) {
         System.out.println("Candidate: ("+ 
                            candidate.getName() + 
