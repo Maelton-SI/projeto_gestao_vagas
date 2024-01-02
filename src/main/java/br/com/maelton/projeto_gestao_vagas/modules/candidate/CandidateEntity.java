@@ -1,10 +1,9 @@
 package br.com.maelton.projeto_gestao_vagas.modules.candidate;
 
-
-
 import org.hibernate.validator.constraints.Length;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
@@ -17,8 +16,9 @@ public class CandidateEntity {
     private String UUID;
     private String name;
 
+    @NotBlank()
     //requisite validation for regexp => expressao regular
-    @Pattern(regexp = "^(?!\\s*$).+", message = "Digite um username válido.")
+    @Pattern(regexp = "\\s+", message = "Digite um username válido.")
     private String username;
     
     //Email arg validation requisite
